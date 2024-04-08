@@ -8,7 +8,7 @@ object rolando{
 	var hogar = castilloDePiedra
 	const property historialDeArtefactos = []
 	
-	method agarrar(artefacto){
+	method encontrar(artefacto){
 		if(self.puedeAgregar()){
 			artefactos.add(artefacto)
 		}
