@@ -57,5 +57,9 @@ object rolando{
 	method poderInvocacion(){
 		return hogar.poderInvocacion(self)
 	}
+	
+	method enemigosVencibles(tierra){
+		return tierra.enemigos(self)
+	}
 
 }
