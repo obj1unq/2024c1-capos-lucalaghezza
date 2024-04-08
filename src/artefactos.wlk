@@ -83,7 +83,7 @@ object bendicion {
 	}
 }
 
-object invibisilidad {
+object invisibilidad {
 	method poder(personaje){
 		return personaje.poderBase()
 	}

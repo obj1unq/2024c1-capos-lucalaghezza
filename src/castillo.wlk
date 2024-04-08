@@ -1,5 +1,5 @@
 object castilloDePiedra {
-	const property baul = #{}
+	var property baul = #{}
 	
 	method guardarTodosLosArtefactos(artefactos){
 		baul.addAll(artefactos)

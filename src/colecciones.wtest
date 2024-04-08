@@ -1,7 +1,8 @@
 import capos.*
 import artefactos.*
+import castillo.*
 
-test "testX" {
+test "Rolando y su poder" {
 	
 	rolando.capacidad(3)
 	rolando.poderBase(5)
@@ -31,4 +32,31 @@ test "testX" {
 	assert.equals(24, rolando.poderPelea())
 	
 
+}
+
+
+test "Libro de hechizos" {
+	rolando.poderBase(5)
+	rolando.artefactos(#{libroDeHechizos})
+	castilloDePiedra.baul(#{espadaDelDestino,armaduraDeAceroValyrio, collarDivino})
+	libroDeHechizos.hechizos([bendicion, invisibilidad, invocacion])
+	
+	
+	assert.equals(4, libroDeHechizos.poder(rolando))
+	assert.equals(bendicion.poder(rolando), libroDeHechizos.poder(rolando))
+	
+	rolando.batalla()
+	assert.equals(6, libroDeHechizos.poder(rolando))
+	assert.equals(invisibilidad.poder(rolando), libroDeHechizos.poder(rolando))
+	
+	rolando.batalla()
+	assert.equals(7, libroDeHechizos.poder(rolando))
+	assert.equals(invocacion.poder(rolando), libroDeHechizos.poder(rolando))
+	
+	
+	
+	rolando.batalla()
+	assert.equals(0, libroDeHechizos.poder(rolando))
+	
+	
 }
