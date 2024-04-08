@@ -12,6 +12,7 @@ test "testX" {
 	assert.equals(3, espadaDelDestino.poder(rolando))
 	assert.equals(6, armaduraDeAceroValyrio.poder(rolando))
 	assert.equals(3, collarDivino.poder(rolando))
+	assert.equals(18, rolando.poderPelea())
 	
 	
 	rolando.batalla()
@@ -19,12 +20,16 @@ test "testX" {
 	assert.equals(3.5, espadaDelDestino.poder(rolando))
 	assert.equals(6, armaduraDeAceroValyrio.poder(rolando))
 	assert.equals(5, collarDivino.poder(rolando))
+	assert.equals(21.5, rolando.poderPelea())
+	
 	
 	rolando.batalla()
 	assert.equals(8,rolando.poderBase())
 	assert.equals(4, espadaDelDestino.poder(rolando))
 	assert.equals(6, armaduraDeAceroValyrio.poder(rolando))
 	assert.equals(6, collarDivino.poder(rolando))
+	assert.equals(24, rolando.poderPelea())
+	
 	
 	
 	assert.that(true)
