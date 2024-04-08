@@ -7,6 +7,7 @@ object rolando{
 	const property artefactos = #{}
 	var hogar = castilloDePiedra
 	const property historialDeArtefactos = []
+	var property poderBase = 5
 	
 	method encontrar(artefacto){
 		if(self.puedeAgregar()){
@@ -19,6 +20,17 @@ object rolando{
 		return artefactos.size()<capacidad
 	}
 	
+	method poderPelea(){
+		return self.poderBase() + self.poderArtefactos()
+	}
+	
+	method poderArtefactos() {
+		return artefactos.sum({ artefacto => artefacto.poder(self)})
+	}
+	
+	method batalla(){
+		artefactos.forEach({artefacto => artefacto.usar()})
+	}
 	
 	method irAlHogar(){
 		self.guardarArtefactosEnHogar()
@@ -40,5 +52,6 @@ object rolando{
 	method todasLasPosesiones(){
 		return artefactos.union(hogar.baul())
 	}
+	
 
 }
