@@ -22,10 +22,20 @@ object espadaDelDestino {
 
 object libroDeHechizos {
 
+	var property hechizos = []
+
 	method poder(personaje) {
+		return if (!hechizos.isEmpty()) {
+			hechizos.first().poder(personaje)
+		} else {
+			0
+		}
 	}
 
 	method usar() {
+		if (!hechizos.isEmpty()) {
+			hechizos.remove(hechizos.first())
+		}
 	}
 
 }
@@ -61,5 +71,27 @@ object armaduraDeAceroValyrio {
 	method usar() {
 	}
 
+}
+
+
+
+// HECHIZOS
+
+object bendicion {
+	method poder(personaje){
+		return 4
+	}
+}
+
+object invibisilidad {
+	method poder(personaje){
+		return personaje.poderBase()
+	}
+}
+
+object invocacion {
+	method poder(personaje){
+		return personaje.poderInvocacion()
+	}
 }
 

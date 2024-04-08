@@ -30,8 +30,5 @@ test "testX" {
 	assert.equals(6, collarDivino.poder(rolando))
 	assert.equals(24, rolando.poderPelea())
 	
-	
-	
-	assert.that(true)
 
 }
