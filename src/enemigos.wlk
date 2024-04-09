@@ -41,10 +41,16 @@ object erethia {
 	var property enemigos = #{archibaldo, caterina, astra}
 	
 	method vencibles(capo){
-		return enemigos.filter({enemigo => enemigo.poderPelea() < capo.poderPelea()})
+		return enemigos.filter({enemigo => capo.vencible(enemigo)})
 	}
+	
 	
 	method hogaresConquistables(capo){
 		return self.vencibles(capo).map({enemigo => enemigo.hogar()})
+	}
+	
+	method esPoderoso(capo){
+		return enemigos.all({enemigo => capo.vencible(enemigo)}) || capo.poderBase() == 10
+		// es un AND, si para todos se cumple la condición devuelve verdadero
 	}
 }

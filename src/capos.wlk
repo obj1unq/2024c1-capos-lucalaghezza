@@ -61,5 +61,22 @@ object rolando{
 	method enemigosVencibles(tierra){
 		return tierra.enemigos(self)
 	}
+	
+	method vencible(enemigo){
+		return enemigo.poderPelea() < self.poderPelea()
+	}
+	
+	method tieneArmaFatal(enemigo){
+		return artefactos.any({artefacto => self.esFatal(artefacto, enemigo)})
+		// es un OR, si alguno cumple la condicion da true
+	}
+	
+	method esFatal(artefacto, enemigo){
+		return artefacto.poder(self) > enemigo.poderPelea()
+	}
+	
+	method cantidadArmasFatales(enemigo){
+		return artefactos.count({artefacto => self.esFatal(artefacto,enemigo)})
+	}
 
 }
