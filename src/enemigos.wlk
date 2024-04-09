@@ -46,7 +46,8 @@ object erethia {
 	
 	
 	method hogaresConquistables(capo){
-		return self.vencibles(capo).map({enemigo => enemigo.hogar()})
+		return self.vencibles(capo).map({enemigo => enemigo.hogar()}).asSet() 
+		// Para que siga siendo un set, ya que map devuelve una lista []
 	}
 	
 	method esPoderoso(capo){
