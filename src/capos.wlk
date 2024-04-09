@@ -78,5 +78,9 @@ object rolando{
 	method cantidadArmasFatales(enemigo){
 		return artefactos.count({artefacto => self.esFatal(artefacto,enemigo)})
 	}
+	
+	method armaFatal(enemigo) {
+		return artefactos.find({artefacto => self.esFatal(artefacto,enemigo)})
+	}
 
 }
