@@ -77,10 +77,17 @@ object rolando{
 	
 	method cantidadArmasFatales(enemigo){
 		return artefactos.count({artefacto => self.esFatal(artefacto,enemigo)})
+		// cuenta los elementos que cumplen la condicion
 	}
 	
 	method armaFatal(enemigo) {
 		return artefactos.find({artefacto => self.esFatal(artefacto,enemigo)})
+		// devuelve 1 solo valor que cumple la condicion
+	}
+	
+	method armasFatales(enemigo) {
+		return artefactos.filter({artefacto => self.esFatal(artefacto,enemigo)})
+		// devuelve todos los valores que cumplen la condicion
 	}
 
 }
